@@ -1,2 +1,2 @@
 # ng2-window-manager
-Window manager
+Window manager - UNDER CONSTRUCTION
