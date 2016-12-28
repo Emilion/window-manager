@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 
 @Component({
     selector: 'my-app',
-    template: `  `,
+    template: `<window></window>`,
 })
 export class AppComponent {
     constructor() {

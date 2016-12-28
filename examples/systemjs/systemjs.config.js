@@ -7,7 +7,7 @@
     // map tells the System loader where to look for things
     var map = {
         'app': 'src',
-        ' ng2-window-manager': 'node_modules/ng2-window-manager',
+        ' ng2-window-manager': './node_modules/ng2-window-manager',
         '@angular': 'node_modules/@angular',
         'rxjs': 'node_modules/rxjs'
     };
@@ -23,6 +23,7 @@
         'common',
         'compiler',
         'core',
+        'forms',
         'platform-browser',
         'platform-browser-dynamic'
     ];

@@ -25,6 +25,6 @@ export * from './src/ng2-window-manager.component';
 })
 export class Ng2WindowManagerModule {
     constructor() {
-        console.log('loaded!')
+        console.log('loaded!');
     }
 }

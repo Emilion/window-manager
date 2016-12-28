@@ -1,14 +1,12 @@
-import {HttpModule} from '@angular/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {TranslateModule} from '../../../ng2-window-manager';
+import {Ng2WindowManager} from '../node_modules/ng2-window-manager';
 import {AppComponent} from './app.component';
 
 @NgModule({
     imports: [
         BrowserModule,
-        HttpModule,
-        TranslateModule.forRoot()
+        Ng2WindowManager
     ],
     declarations: [AppComponent],
     bootstrap: [AppComponent]
