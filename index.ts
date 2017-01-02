@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {NG2WMWindowContainer} from './src/ng2-window-manager.directive';
-import {NG2WMWindow} from './src/ng2-window-manager.component';
+import * as windowLibrary from './src/index';
 
 // export function translateLoaderFactory(http: Http) {
 //     return new TranslateStaticLoader(http);
@@ -10,12 +9,14 @@ import {NG2WMWindow} from './src/ng2-window-manager.component';
 @NgModule({
     imports: [CommonModule],
     declarations: [
-        NG2WMWindow,
-        NG2WMWindowContainer
+        windowLibrary.NG2WMWindow,
+        windowLibrary.NG2WMWindowContainer,
+        windowLibrary.WindowManagerChild,
+        windowLibrary.WMDraggable
     ],
     exports: [
-        NG2WMWindow,
-        NG2WMWindowContainer
+        windowLibrary.NG2WMWindow,
+        windowLibrary.NG2WMWindowContainer
     ]
 })
 export class Ng2WindowManagerModule {

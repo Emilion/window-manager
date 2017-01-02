@@ -15,7 +15,7 @@
     "@angular/platform-browser-dynamic": "^2.1.2",
     "ng2-window-manager": "0.0.1-alpha1",
     "core-js": "2.4.1",
-    "rxjs": "5.0.0-rc.4",
+    "rxjs": "5.0.1",
     "zone.js": "0.7.2"
   },
   "devDependencies": {
