@@ -6,7 +6,7 @@
     "test": "karma start",
     "test-watch": "karma start --singleRun=false --autoWatch=true",
     "commit": "npm run prepublish && npm test && git-cz",
-    "prepublish": "ngc && npm run build",
+    "prepublish": "ngc --verbose && npm run build --verbose",
     "build": "webpack && cp bundles/ng2-window-manager.umd.js bundles/index.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },

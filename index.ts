@@ -1,6 +1,9 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import * as windowLibrary from './src/index';
+import {NG2WMWindowContainer} from './src/ng2-window-manager.directive';
+import {NG2WMWindow} from './src/ng2-window-manager.component';
+import {WMDraggable} from "./src/events/draggable";
+import {WindowManagerChild} from "./src/ek.window-mng-child.directive";
 
 // export function translateLoaderFactory(http: Http) {
 //     return new TranslateStaticLoader(http);
@@ -9,14 +12,14 @@ import * as windowLibrary from './src/index';
 @NgModule({
     imports: [CommonModule],
     declarations: [
-        windowLibrary.NG2WMWindow,
-        windowLibrary.NG2WMWindowContainer,
-        windowLibrary.WindowManagerChild,
-        windowLibrary.WMDraggable
+        NG2WMWindow,
+        NG2WMWindowContainer,
+        WindowManagerChild,
+        WMDraggable
     ],
     exports: [
-        windowLibrary.NG2WMWindow,
-        windowLibrary.NG2WMWindowContainer
+        NG2WMWindow,
+        NG2WMWindowContainer
     ]
 })
 export class Ng2WindowManagerModule {
