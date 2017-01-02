@@ -10,15 +10,15 @@ export class WMDraggable implements OnInit {
     constructor(private element: ElementRef) {}
 
     /**
-     *
+     * enable or disable dragging
      * @param val
      */
-    @Input('[wm-drag-disabled]') set disabled(val:boolean) {
+    @Input('wm-drag-disabled') set disabled(val:boolean) {
         this._disabled = val;
         if(this._disabled) {
             this.element.nativeElement.className = this.element.nativeElement.className.replace(' wd-drag-cursor', '');
         } else {
-            this.element.nativeElement.style.className += ' wm-drag-cursor';
+            this.element.nativeElement.className += ' wm-drag-cursor';
         }
     }
 
@@ -29,7 +29,7 @@ export class WMDraggable implements OnInit {
 
     ngOnInit(): void {
         this.element.nativeElement.style.position = 'relative';
-        this.element.nativeElement.style.className += ' wm-drag-cursor';
+        this.element.nativeElement.className += ' wm-drag-cursor';
     }
 
     @HostListener('mousedown', ['$event']) onMouseDown(event: MouseEvent) {
