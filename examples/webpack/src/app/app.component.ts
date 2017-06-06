@@ -6,6 +6,6 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
     constructor() {
-
+        console.log('should see windows now')
     }
 }

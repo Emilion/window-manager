@@ -37,7 +37,7 @@ import {WindowMangerService} from "./ngx-window-manager.service";
         }*/`
     ]
 })
-export class NG2WMWindow implements OnInit {
+export class WMWindow implements OnInit {
 
     @Input('bg-color') set bgColor(color: string) {
         if(this.template.nativeElement.childNodes[0]) {

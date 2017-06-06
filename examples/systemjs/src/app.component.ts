@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {} from 'ng2-window-manager';
+import {} from 'ngx-window-manager';
 
 @Component({
     selector: 'my-app',

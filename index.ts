@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {NG2WMWindowContainer} from './src/ngx-window-manager.directive';
+import {WMWindowContainer} from './src/ngx-window-manager.directive';
 import {WMWindow} from './src/ngx-window-manager.component';
 import {WMDraggable} from "./src/events/draggable";
 import {WindowManagerChild} from "./src/ek.window-mng-child.directive";
@@ -13,16 +13,16 @@ import {WindowManagerChild} from "./src/ek.window-mng-child.directive";
     imports: [CommonModule],
     declarations: [
         WMWindow,
-        NG2WMWindowContainer,
+        WMWindowContainer,
         WindowManagerChild,
         WMDraggable
     ],
     exports: [
         WMWindow,
-        NG2WMWindowContainer
+        WMWindowContainer
     ]
 })
-export class Ng2WindowManagerModule {
+export class WindowManagerModule {
     constructor() {
         console.log('loaded!');
     }

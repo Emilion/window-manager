@@ -20,14 +20,14 @@ module.exports = {
         extensions: ['.ts', '.js', '.css', '.less']
     },
 
-    entry: helpers.root('ng2-window-manager.ts'),
+    entry: helpers.root('ngx-window-manager.ts'),
 
     output: {
         path: helpers.root('bundles'),
         publicPath: '/',
-        filename: 'ng2-window-manager.umd.js',
+        filename: 'ngx-window-manager.umd.js',
         libraryTarget: 'umd',
-        library: 'ng2-window-manager'
+        library: 'ngx-window-manager'
     },
 
     // require those dependencies but don't bundle them

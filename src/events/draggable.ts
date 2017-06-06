@@ -53,7 +53,11 @@ export class WMDraggable implements OnInit {
         this.draggingListener(this.virtualEle, true);
     }
 
-
+    /**
+     *
+     * @param ele
+     * @param isVirtualEle
+     */
     private draggingListener(ele: any, isVirtualEle: boolean) {
         let mousemove: MouseEvent;
         let mousedown: MouseEvent;
@@ -64,9 +68,26 @@ export class WMDraggable implements OnInit {
                 console.log('mousedown');
                 this.startTopPoint = event.clientY - this.element.nativeElement.style.top.replace('px', '');
                 this.startLeftPoint = event.clientX - this.element.nativeElement.style.left.replace('px', '');
+                /*
+                workaround of ngc build error
+                 */
+                let top;
+                if (isNaN(parseInt(this.element.nativeElement.style.top.replace('px', ''), 10))) {
+                        top = 0;
+                } else {
+                    top = parseInt(this.element.nativeElement.style.top.replace('px', ''), 10)
+                }
 
-                this.setVirtualPosition(isNaN(parseInt(this.element.nativeElement.style.top.replace('px', ''), 10)) ? 0 : parseInt(this.element.nativeElement.style.top.replace('px', ''), 10),
-                    isNaN(parseInt(this.element.nativeElement.style.left.replace('px', ''), 10)) ? 0 : parseInt(this.element.nativeElement.style.left.replace('px', ''), 10));
+                let left;
+                if (isNaN(parseInt(this.element.nativeElement.style.left.replace('px', ''), 10))) {
+                    left = 0;
+                } else {
+                    left = parseInt(this.element.nativeElement.style.left.replace('px', ''), 10);
+                }
+
+
+                this.setVirtualPosition(top, left);
+
                 this.virtualEle.style.display = 'block';
             });
         } else {
