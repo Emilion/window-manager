@@ -17,7 +17,7 @@
   },
   "files": [
     "index.ts",
-    "ng2-window-manager.ts"
+    "ngx-window-manager.ts"
   ],
   "exclude": [
     "node_modules",

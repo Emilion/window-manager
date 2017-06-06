@@ -1,5 +1,5 @@
 import {Component, Input, ElementRef, OnInit} from "@angular/core";
-import {WindowMangerService} from "./ng2-window-manager.service";
+import {WindowMangerService} from "./ngx-window-manager.service";
 
 @Component({
     selector: 'window',

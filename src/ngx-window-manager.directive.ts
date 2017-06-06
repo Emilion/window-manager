@@ -4,6 +4,6 @@ import {Directive} from "@angular/core";
     selector: '[window-container]'
 })
 
-export class NG2WMWindowContainer {
+export class WMWindowContainer {
 
 }
