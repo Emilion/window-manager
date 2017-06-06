@@ -1,4 +1,4 @@
-export interface WindowConfig {
+export type WindowConfig = {
     name?: string;
     title?: string;
     isDraggable?: boolean;

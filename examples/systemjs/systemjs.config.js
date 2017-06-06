@@ -7,7 +7,7 @@
     // map tells the System loader where to look for things
     var map = {
         'app': 'src',
-        'ng2-window-manager': './node_modules/ng2-window-manager',
+        'ng2-window-manager': './node_modules/ngx-window-manager',
         '@angular': 'node_modules/@angular',
         'rxjs': 'node_modules/rxjs'
     };
@@ -16,7 +16,7 @@
     var packages = {
         'app': {main: 'bootstrap.js', defaultExtension: 'js'},
         'rxjs': {defaultExtension: 'js'},
-        'ng2-window-manager': {main: 'bundles/ng2-window-manager.umd.js', defaultExtension: 'js'},
+        'ng2-window-manager': {main: 'bundles/ngx-window-manager.umd.js', defaultExtension: 'js'},
     };
 
     var ngPackageNames = [

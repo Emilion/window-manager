@@ -1,5 +1,5 @@
 import {Component, Input, ElementRef, OnInit} from "@angular/core";
-import {WindowMangerService} from "./ng2-window-manager.service";
+import {WindowMangerService} from "./ngx-window-manager.service";
 
 @Component({
     selector: 'window',
@@ -10,7 +10,7 @@ import {WindowMangerService} from "./ng2-window-manager.service";
         </div>`,
     styles: [`
         .window {
-            position: fixed;
+            position: absolute;
             z-index: 10000;
             min-height: 200px;
             width: 400px;
@@ -21,10 +21,23 @@ import {WindowMangerService} from "./ng2-window-manager.service";
             color: #fff4c2;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             min-height: 34px;
-        }`
+        }
+        .wm-drag-cursor {
+            cursor: move;
+        }
+        .wm-virtual-comp {
+            position: fixed;
+            /*float:left;*/
+            z-index: 10001;
+        }
+        /*.wm-virtual-comp:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }*/`
     ]
 })
-export class NG2WMWindow implements OnInit {
+export class WMWindow implements OnInit {
 
     @Input('bg-color') set bgColor(color: string) {
         if(this.template.nativeElement.childNodes[0]) {

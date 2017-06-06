@@ -1,69 +1,21 @@
-var path = require('path');
-var webpack = require('webpack');
+/**
+ * @author: @AngularClass
+ */
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-
-function root(args) {
-    args = Array.prototype.slice.call(arguments, 0);
-    return path.join.apply(path, [__dirname].concat(args));
+/**
+ * Look in ./config folder for webpack.dev.js
+ */
+switch (process.env.NODE_ENV) {
+  case 'prod':
+  case 'production':
+    module.exports = require('./config/webpack.prod')({env: 'production'});
+    break;
+  case 'test':
+  case 'testing':
+    module.exports = require('./config/webpack.test')({env: 'test'});
+    break;
+  case 'dev':
+  case 'development':
+  default:
+    module.exports = require('./config/webpack.dev')({env: 'development'});
 }
-
-module.exports = {
-    resolve: {
-        extensions: ['.ts', '.js', '.html']
-    },
-
-    devtool: 'cheap-module-source-map',
-
-    module: {
-        rules: [{
-            test: /\.js$/,
-            loader: 'source-map',
-            enforce: 'pre'
-        }, {
-            test: /\.ts$/,
-            loader: 'awesome-typescript-loader',
-            exclude: /(node_modules)/
-        }]
-    },
-
-    entry: {
-        'app': './src/bootstrap.ts'
-    },
-
-    devServer: {
-        outputPath: root('dist'),
-        watchOptions: {
-            poll: true
-        },
-        stats: {
-            modules: false,
-            cached: false,
-            colors: true,
-            chunks: false
-        }
-    },
-
-    output: {
-        path: root('dist'),
-        filename: '[name].[hash].js',
-        sourceMapFilename: '[name].[hash].map',
-        chunkFilename: '[id].[hash].chunk.js'
-    },
-
-    plugins: [
-        // fix the warning in ./~/@angular/core/src/linker/system_js_ng_module_factory_loader.js
-        new webpack.ContextReplacementPlugin(
-            /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-            root('./src')
-        ),
-
-        new HtmlWebpackPlugin({
-            template: 'index.html',
-            chunksSortMode: 'dependency'
-        }),
-
-        new webpack.optimize.OccurrenceOrderPlugin(true)
-    ]
-};
